@@ -1,18 +1,18 @@
 {
   "main": {
-    "name": "Tim Baker",
-    "occupation": "(Your Occupation Here)",
-    "description": "Here will be your description. Use this to describe what you do or whatever you feel best describes yourself to a potential employer",
-    "image": "profilepic.jpg",
-    "bio": "Use this bio section as your way of describing yourself and saying what you do, what technologies you like to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing in.",
+    "name": "Manuel Bermudez",
+    "occupation": "System Engineering student",
+    "description": "I am very profesional with my work and I usually like to learn new ways to solve the problems better than I know. So, I am seeking for new challenges constantly.",
+    "image": "img.jpeg",
+    "bio": "I like to develope programs for a better life. The responsability and punctuality are very important for me while I am working (no matters if i'm alone or with a group of people). I am always thinking with visionary ideas that can be very useful for everyone. Also, I usually check the final release of the project before we send it because I  think that we should do the things as well as possible.",
     "contactmessage": "Here is where you should write your message to readers to have them get in contact with you.",
     "email": "youremailhere@gmail.com",
     "phone": "555-555-5555",
     "address": {
-      "street": "(Your Street)",
-      "city": "(Your City)",
-      "state": "(Your State)",
-      "zip": "(Your Zip/Postal Code)"
+      "street": "(Cra 10C)",
+      "city": "Colombian",
+      "state": "(Manizales)",
+      "zip": "(100004)"
     },
     "website": "http://www.timbakerdev.com",
     "resumedownload": "http://timbakerdev.com",
