@@ -123,7 +123,8 @@
         "title": "Javascript Ex 11",
         "category": "homework 11",
         "image": "ex11.png",
-        "url": "https://mbermudez24.github.io/Tarea11_Prog/"
+        "url": "https://mbermudez24.github.io/Tarea11_Prog/",
+        "target": "_blank"
       },
       {
         "title": "Ristorante con Fusion",
