@@ -9,6 +9,14 @@ import Resume from './Components/Resume';
 import Contact from './Components/Contact';
 import Testimonials from './Components/Testimonials';
 import Portfolio from './Components/Portfolio';
+import Welcome from './Components/Welcome';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 class App extends Component {
 
@@ -45,15 +53,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header data={this.state.resumeData.main}/>
-        <About data={this.state.resumeData.main}/>
-        <Resume data={this.state.resumeData.resume}/>
-        <Portfolio data={this.state.resumeData.portfolio}/>
-        <Testimonials data={this.state.resumeData.testimonials}/>
-        <Contact data={this.state.resumeData.main}/>
-        <Footer data={this.state.resumeData.main}/>
-      </div>
+      <BrowserRouter>
+            <Header/>
+              <Routes>
+                <Route path="/" element={<Welcome data={this.state.resumeData.main}/>}/>
+                <Route path="/about" element={<About data={this.state.resumeData.main}/>}/>
+                <Route path="/resume" element={<Resume data={this.state.resumeData.resume}/>}/>
+                <Route path="/portfolio" element={<Portfolio data={this.state.resumeData.portfolio}/>}/>
+                <Route path="/testimonials" element={<Testimonials data={this.state.resumeData.testimonials}/>}/> 
+                <Route path="/contact" element={<Contact data={this.state.resumeData.main}/>}/>
+                {/* <Footer data={this.state.resumeData.main}/> */}
+              </Routes>
+    </BrowserRouter>
     );
   }
 }
