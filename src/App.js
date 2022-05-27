@@ -1,61 +1,36 @@
-import React, { Component } from 'react';
-import ReactGA from 'react-ga';
-import $ from 'jquery';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import HeaderCV from './components/navbar/index.js';
+import HomeCV from './components/home';
+import AboutCV from './components/about';
+import InterestsCV from './components/interests';
+import ContactCV from './components/contact'; 
+
 import './App.css';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
-import About from './Components/About';
-import Resume from './Components/Resume';
-import Contact from './Components/Contact';
-import Testimonials from './Components/Testimonials';
-import Portfolio from './Components/Portfolio';
 
-class App extends Component {
-
-  constructor(props){
-    super(props);
-    this.state = {
-      foo: 'bar',
-      resumeData: {}
-    };
-
-    ReactGA.initialize('UA-110570651-1');
-    ReactGA.pageview(window.location.pathname);
-
-  }
-
-  getResumeData(){
-    $.ajax({
-      url:'/resumeData.json',
-      dataType:'json',
-      cache: false,
-      success: function(data){
-        this.setState({resumeData: data});
-      }.bind(this),
-      error: function(xhr, status, err){
-        console.log(err);
-        alert(err);
-      }
-    });
-  }
-
-  componentDidMount(){
-    this.getResumeData();
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <Header data={this.state.resumeData.main}/>
-        <About data={this.state.resumeData.main}/>
-        <Resume data={this.state.resumeData.resume}/>
-        <Portfolio data={this.state.resumeData.portfolio}/>
-        <Testimonials data={this.state.resumeData.testimonials}/>
-        <Contact data={this.state.resumeData.main}/>
-        <Footer data={this.state.resumeData.main}/>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <BrowserRouter>
+            <HeaderCV/>
+              <Routes>
+                <Route path="/" element={<HomeCV/>}/>
+                <Route path="/home" element={<HomeCV/>}/>
+                <Route path="/about" element={<AboutCV />}/>
+                <Route path="/interests" element={<InterestsCV/>}/>
+                <Route path="/contact" element={<ContactCV 
+                  nameOne="Aurelia Martinez"
+                  nameTwo="aurimar@mail.com"
+                  nameThree="Quiero trabajar con ustedes :D!"
+                />}/> 
+              </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
